@@ -1,0 +1,46 @@
+server:
+  port:8080
+#server.port=8080
+
+#db
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://maria-db:3306/test?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    hikari:
+      username: root
+      password: root
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+    hibernate:
+      ddl-auto: create
+  session:
+    redis:
+      namespace: spring:session_test
+  redis:
+    cache:
+      host: redis-cache
+      port: 6379
+    session:
+      host: redis-session
+      port: 6380
+
+#spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+#spring.datasource.url=jdbc:mariadb://maria-db:3306/test
+#spring.datasource.username=root
+#spring.data.redis.password=root
+#jpa
+#spring.jpa.properties.hibernate.format_sql=true
+#spring.jpa.show-sql=true
+#spring.jpa.hibernate.ddl-auto=create
+#redis-session
+#spring.session.store-type=redis
+#spring.data.redis.port=6380
+#spring.data.redis.host=redis-session
+#redis-cache
+#spring.cache.type=redis
+#spring.cache.redis.host=redis-cache
+#spring.cache.redis.port=6380  # Redis cache port
